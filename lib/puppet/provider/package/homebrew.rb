@@ -102,7 +102,7 @@ Puppet::Type.type(:package).provide :homebrew, :parent => Puppet::Provider::Pack
 
   def latest
     execute([ "brew", "install", @resource[:name] ], command_opts).strip
-    execute([ "brew", "upgrade", @resource[:name] ]).strip
+    execute([ "brew", "upgrade", @resource[:name] ], command_opts).strip
   end
 
   def query
