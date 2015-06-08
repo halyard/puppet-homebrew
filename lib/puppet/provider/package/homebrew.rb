@@ -57,9 +57,8 @@ Puppet::Type.type(:package).provide :homebrew, :parent => Puppet::Provider::Pack
   end
 
   def install
+    update_formulas
     version = unversioned? ? latest : @resource[:ensure]
-
-    update_formulas if !version_defined?(version) || version == 'latest'
 
     if self.class.available? @resource[:name], version
       # If the desired version is already installed, just link or
@@ -101,8 +100,7 @@ Puppet::Type.type(:package).provide :homebrew, :parent => Puppet::Provider::Pack
   end
 
   def latest
-    execute([ "brew", "install", @resource[:name] ], command_opts).strip
-    execute([ "brew", "upgrade", @resource[:name] ], command_opts).strip
+    execute([ "brew", "boxen-latest", @resource[:name] ], command_opts).strip
   end
 
   def query
