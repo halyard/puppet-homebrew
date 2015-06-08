@@ -101,7 +101,8 @@ Puppet::Type.type(:package).provide :homebrew, :parent => Puppet::Provider::Pack
   end
 
   def latest
-    execute([ "brew", "boxen-latest", @resource[:name] ], command_opts).strip
+    execute([ "brew", "install", @resource[:name] ], command_opts).strip
+    execute([ "brew", "upgrade", @resource[:name] ]).strip
   end
 
   def query
