@@ -76,11 +76,7 @@ Puppet::Type.type(:package).provide :homebrew, :parent => Puppet::Provider::Pack
         execute [ "brew", "unlink", @resource[:name] ], command_opts
       end
 
-      if install_options.any?
-        execute [ "brew", "install", @resource[:name], *install_options ].flatten, command_opts
-      else
-        execute [ "brew", "boxen-install", @resource[:name] ], command_opts
-      end
+      execute [ "brew", "install", @resource[:name], *install_options ].flatten, command_opts
     end
   end
 
