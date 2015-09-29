@@ -1,8 +1,17 @@
-# Homebrew Puppet Module for Boxen
+puppet-homebrew
+===========
 
-[![Build Status](https://travis-ci.org/boxen/puppet-homebrew.svg?branch=master)](https://travis-ci.org/boxen/puppet-homebrew)
+[![MIT Licensed](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://tldrlegal.com/license/mit-license)
+[![Build Status](https://img.shields.io/circleci/project/halyard/puppet-homebrew.svg)](https://circleci.com/gh/halyard/puppet-homebrew)
 
-Install [Homebrew](http://brew.sh), a package manager for Mac OS X.
+Module to install and manage homebrew for boxen
+
+## Changes from upstream
+
+* Removed a lot of meta-stuff I wasn't using, like the cardboard scripts
+* Set up CircleCI build tests
+* Set mode for brew boxen scripts
+* Clean up update/install logic for latest version
 
 ## Usage
 
@@ -43,11 +52,4 @@ package { 'php54':
 
 ## Required Puppet Modules
 
-* `boxen`, >= 1.2
-* `repository`, >= 2.0
-* `stdlib`, >= 4.0
-
-## Development
-
-Write code. Run `script/cibuild` to test it. Check the `script`
-directory for other useful tools.
+* [boxen](https://github.com/halyard/puppet-boxen)
