@@ -52,11 +52,12 @@ class homebrew(
     before  => Exec["install homebrew to ${installdir}"],
   }
 
+  $master_ref = 'master:refs/remotes/origin/master'
   exec { "install homebrew to ${installdir}":
     command => "git init -q &&
                 git config remote.origin.url https://github.com/${repo} &&
-                git config remote.origin.fetch master:refs/remotes/origin/master &&
-                git fetch origin master:refs/remotes/origin/master -n &&
+                git config remote.origin.fetch ${master_ref} &&
+                git fetch origin ${master_ref} -n &&
                 git reset --hard origin/master",
     cwd     => $installdir,
     user    => $::boxen_user,

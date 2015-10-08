@@ -1,0 +1,22 @@
+{
+  "name": "halyard-homebrew",
+  "version": "1.13.1",
+  "author": "Les Aker",
+  "license": "MIT",
+  "summary": "Configure homebrew via Boxen",
+  "source": "https://github.com/halyard/puppet-homebrew",
+  "project_page": "https://github.com/halyard/puppet-homebrew",
+  "issues_url": "https://github.com/halyard/puppet-homebrew/issues",
+  "dependencies": [
+
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Darwin",
+      "operatingsystemmajrelease": [
+        "14",
+        "15"
+      ]
+    }
+  ]
+}
