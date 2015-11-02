@@ -4,11 +4,12 @@
 #
 #   require homebrew::config
 
-class homebrew::config {
+class homebrew::config(
+  $installdir = $::homebrew_root
+){
   include boxen::config
 
   $cachedir   = "${boxen::config::cachedir}/homebrew"
-  $installdir = $::homebrew_root
   $libdir     = "${installdir}/lib"
 
   $cmddir     = "${installdir}/Library/Homebrew/cmd"

@@ -14,6 +14,7 @@ Module to install and manage homebrew for boxen
 * Set up CircleCI build tests
 * Set mode for brew boxen scripts
 * Clean up update/install logic for latest version
+* Make homebrew_root actually configurable
 
 ## Usage
 
