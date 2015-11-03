@@ -1,6 +1,6 @@
 {
   "name": "halyard-homebrew",
-  "version": "1.13.3",
+  "version": "1.13.4",
   "author": "Les Aker",
   "license": "MIT",
   "summary": "Configure homebrew via Boxen",
