@@ -99,14 +99,14 @@ class homebrew(
 
     # shim for bottle hooks
     "${brewsdir}/cmd/boxen-bottle-hooks.rb":
-      source  => 'puppet:///modules/homebrew/boxen-bottle-hooks.rb',
-      mode => '0755' ;
+      source => 'puppet:///modules/homebrew/boxen-bottle-hooks.rb',
+      mode   => '0755' ;
     "${brewsdir}/cmd/brew-boxen-latest.rb":
-      source  => 'puppet:///modules/homebrew/brew-boxen-latest.rb',
-      mode => '0755' ;
+      source => 'puppet:///modules/homebrew/brew-boxen-latest.rb',
+      mode   => '0755' ;
     "${brewsdir}/cmd/brew-boxen-install.rb":
-      source  => 'puppet:///modules/homebrew/brew-boxen-install.rb',
-      mode => '0755' ;
+      source => 'puppet:///modules/homebrew/brew-boxen-install.rb',
+      mode   => '0755' ;
   }
 
   ->
