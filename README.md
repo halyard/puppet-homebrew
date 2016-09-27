@@ -4,7 +4,7 @@ puppet-homebrew
 [![Puppet Forge](https://img.shields.io/puppetforge/v/halyard/homebrew.svg)](https://forge.puppetlabs.com/halyard/homebrew)
 [![Dependency Status](https://img.shields.io/gemnasium/halyard/puppet-homebrew.svg)](https://gemnasium.com/halyard/puppet-homebrew)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
-[![Build Status](https://img.shields.io/circleci/project/halyard/puppet-homebrew.svg)](https://circleci.com/gh/halyard/puppet-homebrew)
+[![Build Status](https://img.shields.io/circleci/project/halyard/puppet-homebrew/master.svg)](https://circleci.com/gh/halyard/puppet-homebrew)
 
 Module to install and manage homebrew for boxen
 
