@@ -6,7 +6,7 @@ class homebrew (
   $path = '/usr/local',
   $owner = $facts['id'],
   $group = $facts['gid'],
-  $repo = 'git://github.com/homebrew/brew'
+  $repo = 'https://github.com/homebrew/brew'
 ) {
   vcsrepo { $path:
     ensure   => present,
