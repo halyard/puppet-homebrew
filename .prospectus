@@ -1,17 +1,20 @@
 require 'json'
 
 JSON.parse(File.read('metadata.json'))['dependencies'].each do |dep|
-  repo_name = dep['name'].sub('/', '/puppet-')
-  module_name = repo_name.split('/').last
+  repo_org, repo_name = dep['name'].split('/')
+  prefix = repo_org == 'puppetlabs' ? 'puppetlabs' : 'puppet'
+  repo_name = prefix + '-' + repo_name
+  repo_slug = [repo_org, repo_name].join('/')
   version = dep['version_requirement'].sub(/\.x/, '')
 
   item do
-    name "puppet-homebrew::#{module_name}"
+    name "puppet-sudoers::#{repo_name}"
 
     expected do
       github_tag
-      repo repo_name
-      regex /^v(\d+\.\d+).\d+$/
+      repo repo_slug
+      regex /^(\d+\.\d+)\.\d+$/
+      filter /^\d+\.\d+.\d+$/
     end
 
     actual do
