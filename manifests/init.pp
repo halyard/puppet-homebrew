@@ -3,12 +3,12 @@
 # Configure Homebrew
 
 class homebrew (
-  $path = '/usr/local',
-  $owner = $facts['id'],
-  $group = $facts['gid'],
-  $repo = 'https://github.com/homebrew/brew',
-  $taps = [],
-  $formulae = []
+  String[1] $path = '/usr/local',
+  String[1] $owner = $facts['id'],
+  String[1] $group = $facts['gid'],
+  String[1] $repo = 'https://github.com/homebrew/brew',
+  Hash[String[1], Hash] $taps = {},
+  Array[String[1]] $formulae = []
 ) {
   vcsrepo { $path:
     ensure   => present,
@@ -18,11 +18,8 @@ class homebrew (
     group    => $group
   }
 
-  $taps.each |String[1] $tap| {
-    package { $tap:
-      provider => tap
-    }
-  }
+
+  create_resources(homebrew::tap, $taps)
 
   $formulae.each |String[1] $formula| {
     package { $formula:
@@ -30,6 +27,6 @@ class homebrew (
     }
   }
 
-  Package <| provider == tap |> -> Package <| provider == brew |>
-  Package <| provider == tap |> -> Package <| provider == cask |>
+  Homebrew::Tap <| |> -> Package <| provider == brew |>
+  Homebrew::Tap <| |> -> Package <| provider == cask |>
 }
