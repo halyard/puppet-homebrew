@@ -8,7 +8,8 @@ class homebrew (
   String[1] $group = $facts['gid'],
   String[1] $repo = 'https://github.com/homebrew/brew',
   Hash[String[1], Hash] $taps = {},
-  Array[String[1]] $formulae = []
+  Array[String[1]] $formulae = [],
+  Array[String[1]] $casks = []
 ) {
   vcsrepo { $path:
     ensure   => present,
@@ -24,6 +25,12 @@ class homebrew (
   $formulae.each |String[1] $formula| {
     package { $formula:
       provider => brew
+    }
+  }
+
+  $casks.each |String[1] $cask| {
+    package { $cask:
+      provider => cask
     }
   }
 
