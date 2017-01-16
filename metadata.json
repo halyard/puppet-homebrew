@@ -13,6 +13,10 @@
       "version_requirement": "1.5.x"
     },
     {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": "4.14.x"
+    },
+    {
       "name": "halyard/sudoers",
       "version_requirement": "0.2.x"
     }
