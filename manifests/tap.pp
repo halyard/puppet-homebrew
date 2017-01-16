@@ -15,6 +15,11 @@ define homebrew::tap(
 
   $repo_path = "${homebrew::path}/Library/Taps/${slug}"
 
+  exec { "mkdir -p ${repo_path}":
+    user    => $homebrew::owner,
+    group   => $homebrew::group,
+    creates => $repo_path
+  } ->
   vcsrepo { $repo_path:
     ensure   => $ensure,
     provider => git,
