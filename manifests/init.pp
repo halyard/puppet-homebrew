@@ -20,12 +20,12 @@ class homebrew (
   }
 
   sudoers::allowed_command{ 'cask_installer':
-    command               => "/usr/sbin/installer",
-    user                  => $facts['id'],
-    require_password      => false,
-    require_exist         => false,
-    tags                  => ['SETENV'],
-    comment               => 'Allows homebrew to install casks'
+    command          => 'usr/sbin/installer',
+    user             => $facts['id'],
+    require_password => false,
+    require_exist    => false,
+    tags             => ['SETENV'],
+    comment          => 'Allows homebrew to install casks'
   }
 
   create_resources(homebrew::tap, $taps)
