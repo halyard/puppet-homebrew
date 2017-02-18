@@ -20,7 +20,7 @@ class homebrew (
   }
 
   sudoers::allowed_command{ 'cask_installer':
-    command          => 'usr/sbin/installer',
+    command          => '/usr/sbin/installer',
     user             => $facts['id'],
     require_password => false,
     require_exist    => false,
