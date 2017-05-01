@@ -59,7 +59,11 @@ Puppet::Type.type(:package).provide :cask, :parent => Puppet::Provider::Package 
       :gid => stat.gid,
       :failonfail => true,
       :combine => true,
-      :custom_environment => { 'HOME' => home }
+      :custom_environment => {
+        'HOME' => home,
+        'HOMEBREW_DEVELOPER' => '1',
+        'HOMEBREW_RUBY_PATH' => Puppet::Util::Execution.ruby_path
+      }
     )
   end
 end
