@@ -4,8 +4,8 @@
 
 class homebrew (
   String[1] $path = '/usr/local',
-  String[1] $owner = $facts['id'],
-  String[1] $group = $facts['gid'],
+  Variant[String[1], Integer] $owner = $facts['id'],
+  Variant[String[1], Integer] $group = $facts['gid'],
   String[1] $repo = 'https://github.com/Homebrew/brew',
   Hash[String[1], Hash] $taps = {},
   Array[String[1]] $formulae = [],

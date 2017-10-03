@@ -19,8 +19,8 @@ define homebrew::tap(
     user    => $homebrew::owner,
     group   => $homebrew::group,
     creates => $repo_path
-  } ->
-  vcsrepo { $repo_path:
+  }
+  -> vcsrepo { $repo_path:
     ensure   => $ensure,
     provider => git,
     source   => $repo_url,
