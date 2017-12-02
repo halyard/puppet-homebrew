@@ -1,6 +1,6 @@
 {
   "name": "halyard-homebrew",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "author": "Les Aker",
   "license": "MIT",
   "summary": "Configure homebrew",
