@@ -4,8 +4,7 @@ define homebrew::tap(
   Enum['present', 'absent'] $ensure = 'present',
   Variant[Undef, String[1]] $repo = undef
 ) {
-  $chunks = split($title, '/')
-  $slug = join($chunks, '/homebrew-')
+  $slug = $title
 
   if $repo {
     $repo_url = $repo
